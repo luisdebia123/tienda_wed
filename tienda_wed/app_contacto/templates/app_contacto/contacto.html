@@ -1,0 +1,32 @@
+{%  extends 'base.html' %}
+{% load static %}
+
+{% block titulo%} Esta es la Página Principal{% endblock %}
+
+
+{% block contenidos %}
+
+<div class="formulario">
+    {% if messages %}
+        {% for message in messages %}
+        <p style="color:white;">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+
+
+<div class="contenedorFormulario";>
+
+
+
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+        <table style="color: white; margin: 20px auto;">
+            {{form_contacto.as_table}}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+
+</div>
+
+
+{% endblock %}
